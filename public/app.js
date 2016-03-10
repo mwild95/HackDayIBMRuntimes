@@ -14,12 +14,14 @@ angular.module('SocialInsights', [
 
     $stateProvider.state('dashboard', {
         url:'/dashboard',
-        templateUrl:"partials/dashboard.html"
+        templateUrl:"partials/dashboard.html",
+        controller:"dashboardCtrl"
     });
 
     $stateProvider.state('feed', {
         url:'/feed',
-        templateUrl:"partials/feed.html"
+        templateUrl:"partials/feed.html",
+        controller:"feedCtrl"
     });
    
 }])
@@ -76,8 +78,12 @@ angular.module('SocialInsights', [
     };
 })
 
-.controller('appCtrl', ['$rootScope', function($rootScope){
+.controller('appCtrl', ['$rootScope', '$scope', '$state', function($rootScope, $scope, $state){
 	$rootScope.showTitleBar = false;
+
+	$scope.linkClicked = function(state){
+		$state.go(state);
+	};
 }])
 
 .controller('loginCtrl', ['$rootScope', '$scope', 'UserAuth', '$state', function($rootScope, $scope, UserAuth, $state){
@@ -106,5 +112,9 @@ angular.module('SocialInsights', [
 .controller('dashboardCtrl', ['$rootScope', function($rootScope){
 	$rootScope.showTitleBar = true;
 }])
+
+.controller('feedCtrl', ['$rootScope', function($rootScope){
+	$rootScope.showTitleBar = true;
+}]);
 
 ;

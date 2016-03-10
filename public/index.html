@@ -19,8 +19,24 @@
   </head>
 
   <body ng-app="SocialInsights">
-    
-    <div ui-view ng-controller="appCtrl" class="fill">
+    <nav class="navbar navbar-inverse navbar-full navbar-fixed-top bg-faded" ng-show="$root.showTitleBar" style="margin-bottom:0;">
+      <a class="navbar-brand" href="#">IBM Social Insights</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="javascript:;" ng-click="linkClicked('dashboard')">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" ng-click="linkClicked('feed')">#Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" ng-click="linkClicked('me')">Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:;" ng-click="linkClicked('teams')">Teams</a>
+        </li>
+      </ul>
+    </nav>
+    <div ui-view ng-controller="appCtrl" class="fill" ng-class="{'titleBarVisible': $root.showTitleBar}">
 
     </div>
   </body>
