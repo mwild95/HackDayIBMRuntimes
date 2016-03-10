@@ -1,1 +1,27 @@
-<h1>login</h1>
+<div class="loginBody fill" ng-controller="loginCtrl">
+	<div class="loginForm">
+		<center><h1 style="color:white;"><span style="font-weight:lighter">IBM</span> <span style="font-weight:400;">Social Insights</span></h1></center>
+		<div class="alert alert-danger" role="alert" ng-show="showError">{{error}}</div>
+		<label for="Username" class="form-label">Username</label>
+		<input placeholder="Username"
+			name="Username"
+			id="username"
+			class="textbox form-control"
+			type="text"
+			ng-model="user.username"
+			max-length="25"
+			force-focus="true" required/>
+		<br>
+		<label for="Password" class="form-label">Password</label>
+		<input placeholder="Password"
+			name="Password"
+			id="password"
+			class="textbox form-control"
+			type="password"
+			ng-model="user.password"
+			max-length="25"
+			force-focus="false" required/>
+		<br>
+		<button type="button" class="form-control" ng-click="login()" text="Login">Login</button>
+	</div>
+</div>

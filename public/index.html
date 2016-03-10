@@ -10,12 +10,19 @@
     <script src="thirdparty/angularJS.js"></script>
     <script src="thirdparty/angularRoute.js"></script>
     <script src="thirdparty/angular-ui-router.min.js"></script>
+    <script src="thirdparty/jquery.js"></script>
+    <script src="thirdparty/bootstrap.min.js"></script>
+
     <script src="app.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="thirdparty/bootstrap.min.css">
   </head>
 
   <body ng-app="SocialInsights">
-    <div ui-view ng-controller="appCtrl"></div>
+    
+    <div ui-view ng-controller="appCtrl" class="fill">
+
+    </div>
   </body>
 
 </html>
